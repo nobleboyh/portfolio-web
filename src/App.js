@@ -1,7 +1,10 @@
+import Content from './layouts/components/Content';
+import SideBar from './layouts/components/SideBar';
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div className="app-wrapper">
+      <Content></Content>
+      <SideBar></SideBar>
     </div>
   );
 }

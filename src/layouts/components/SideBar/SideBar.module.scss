@@ -1,0 +1,153 @@
+.wrapper {
+  background-color: lightsalmon;
+  display: block;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar-width);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    list-style: none;
+    //transform
+    transform: skewY(-15deg);
+    position: relative;
+  }
+}
+
+.menuItem {
+  position: relative;
+  background-color: var(--secondary-background-color);
+  padding: 2rem;
+  height: 8rem;
+  width: 25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  filter: brightness(1);
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 4rem;
+    height: 100%;
+    background-color: var(--secondary-background-color);
+    filter: brightness(0.6);
+    left: -4rem;
+    top: 0;
+    //transform
+    transform-origin: right;
+    transform: skewY(45deg);
+  }
+
+  &:after {
+    position: absolute;
+    content: ' ';
+    position: absolute;
+    content: '';
+    width: 25rem;
+    height: 4rem;
+    background-color: var(--secondary-background-color);
+    filter: brightness(0.9);
+    top: -4rem;
+    left: 0rem;
+    //transform
+    transform-origin: bottom;
+    transform: skewX(45deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    transform: translateX(30px) translateY(30px);
+    transition: 0.5s;
+
+    &::after {
+      transition: 0.5s;
+
+      background-color: var(--primary-color);
+    }
+
+    &::before {
+      transition: 0.5s;
+
+      background-color: var(--primary-color);
+    }
+  }
+
+  //Active link
+
+  & .active {
+    background-color: var(--primary-color);
+    transform: translateX(30px) translateY(30px);
+    &::after {
+      background-color: var(--primary-color);
+    }
+
+    &::before {
+      background-color: var(--primary-color);
+    }
+  }
+}
+.wrapper .menu {
+  @for $i from 1 through 8 {
+    li:nth-child(#{$i}) {
+      z-index: 10 - $i;
+      &::after {
+        box-shadow: -(100px+ (6-$i) * 80px) (100px+ (6-$i) * 80px) 10px rgba($color: #000, $alpha: 0.2);
+      }
+    }
+  }
+}
+
+.menu::before {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: lightblue;
+  background-image: radial-gradient(circle at top, lightblue, 60%, #000);
+  position: absolute;
+  z-index: 1000;
+  transform: skew(15deg);
+  top: -30rem;
+  left: 16rem;
+
+  animation: move 3s ease-in-out 1s infinite alternate, drop 1s ease-in 0s 1 forwards;
+  box-shadow: -0.2rem 1rem 10px #000;
+}
+
+@keyframes move {
+  from {
+    left: 16rem;
+  }
+  to {
+    left: 0rem;
+  }
+}
+
+@keyframes drop {
+  from {
+    top: -30rem;
+  }
+  to {
+    top: -3rem;
+  }
+}
+.itemIcon ~ .itemTitle {
+  margin-left: 1rem;
+}
+
+.itemIcon svg {
+  width: 30px;
+}
+
+.itemTitle {
+  user-select: none;
+}
