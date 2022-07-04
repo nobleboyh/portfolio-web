@@ -1,6 +1,7 @@
 import styles from './SideBar.module.scss';
 import PropTypes from 'prop-types';
 const MenuItem = ({ title, icon, href }) => {
+  console.log(href);
   return (
     <li className={styles.menuItem}>
       <a href={href}>

@@ -8,9 +8,9 @@ const SideBar = () => {
   return (
     <aside className={styles.wrapper}>
       <ul className={styles.menu}>
-        <MenuItem title="About me" icon={<FontAwesomeIcon icon={faFolderOpen} />} />
-        <MenuItem title="Experiences" icon={<FontAwesomeIcon icon={faCode} />} />
+        <MenuItem title="About me" icon={<FontAwesomeIcon icon={faFolderOpen} />} href={'#aboutme'} />
         <MenuItem title="Backgrounds" icon={<FontAwesomeIcon icon={faGraduationCap} />} />
+        <MenuItem title="Experiences" icon={<FontAwesomeIcon icon={faCode} />} />
         <MenuItem title="Hobbies" icon={<FontAwesomeIcon icon={faFaceKiss} />} />
         <MenuItem title="Contact" icon={<FontAwesomeIcon icon={faIdCard} />} />
       </ul>
