@@ -1,5 +1,5 @@
-import Content from './layouts/components/Content';
-import SideBar from './layouts/components/SideBar';
+import Content from './layouts/Content';
+import SideBar from './layouts/SideBar';
 function App() {
   return (
     <div className="app-wrapper">

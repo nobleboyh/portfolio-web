@@ -9,10 +9,10 @@
 
 .container {
   width: 1000px;
-  max-width: 80%;
+  max-width: 90%;
   background-color: var(--main-container-color);
   margin: 25vh auto;
-  padding: 3rem;
+  padding: 0rem;
   border-radius: 3rem;
 
   //Set color
@@ -25,6 +25,7 @@
 .aboutme {
   position: relative;
   margin-left: 2rem;
+  padding: 2rem;
   // height: calc(75vh - 3rem);
   border-bottom: 2px solid var(--primary-color);
   * {
@@ -64,11 +65,12 @@
 
 //backgrounds
 .backgrounds {
+  padding: 2rem;
   // height: 100vh;
   // max-height: fit-content;
   margin-left: 2rem;
   margin-top: 2rem;
-  border-bottom: 2px solid var(--primary-color);
+  //border-bottom: 2px solid var(--primary-color);
 
   * {
     font-weight: 600;
@@ -119,4 +121,39 @@
   margin: 2rem auto;
   font-size: 2rem;
   height: 40rem;
+}
+
+//Experiences
+.experiences {
+  padding: 4rem;
+  background-color: lightcoral;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+}
+.cards {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.techStackWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-container-color);
+  margin-top: 4rem;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: 1rem;
+  h2 {
+    text-align: center;
+  }
+}
+.techStack {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+  gap: 1rem;
 }

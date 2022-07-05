@@ -1,6 +1,29 @@
 const images = {
   avatar: require('./avatar.jpg'),
   hust: require('./hust.png'),
+  pana: require('./panasonic.png'),
+  trans: require('./transcosmos.png'),
+  code: require('./code.png'),
+  //Comunication tool
+  outlook: require('./tech/outlook.png'),
+  line: require('./tech/line.png'),
+  backlogs: require('./tech/backlogs.png'),
+  teams: require('./tech/teams.png'),
+  hangouts: require('./tech/hangouts.png'),
+  //Code lang
+  asp: require('./tech/asp.png'),
+  cpp: require('./tech/Cpp.png'),
+  css: require('./tech/css.png'),
+  html: require('./tech/html.png'),
+  java: require('./tech/java.png'),
+  js: require('./tech/js.png'),
+  react: require('./tech/react.png'),
+  swift: require('./tech/swift.png'),
+  vbscript: require('./tech/vbscript.png'),
+  winform: require('./tech/winform.png'),
+  wpf: require('./tech/wpf.png'),
+  svn: require('./tech/svn.png'),
+  git: require('./tech/git.png'),
 };
 
 export default images;

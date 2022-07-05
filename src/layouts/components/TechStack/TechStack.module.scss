@@ -1,0 +1,48 @@
+.wrapper {
+  --main-card-color: #646567;
+  background-color: #f6f6f6;
+  position: relative;
+  max-width: 30rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid var(--main-card-color);
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: flex-start;
+  user-select: none;
+  overflow: hidden;
+  flex: 1 1;
+  * {
+    z-index: 1;
+  }
+  h2 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0.1rem;
+    background-color: var(--main-card-color);
+  }
+}
+
+.childrenWrapper {
+  padding: 2rem 1rem 2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    max-height: 4rem;
+    margin: 1rem;
+  }
+  justify-content: flex-start;
+}
+
+.detailBtn {
+  margin: 1rem 25% 0 25%;
+  font-size: 1.5rem;
+  background-color: var(--main-card-color);
+  border-radius: 999px;
+  &:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+  }
+}

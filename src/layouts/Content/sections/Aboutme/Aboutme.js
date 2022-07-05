@@ -1,6 +1,6 @@
 import styles from '../../Content.module.scss';
 import images from '~/assets/images';
-import CoffeeCup from '~/layouts/CoffeeCup';
+import CoffeeCup from '~/layouts/components/CoffeeCup';
 const Aboutme = () => {
   return (
     <section id="aboutme" className={styles.aboutme}>

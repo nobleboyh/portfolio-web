@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 const Backgrounds = () => {
   const accordionItemRef = useRef([]);
-
+  useEffect(() => {
+    accordionItemRef.current.at(0).active();
+  }, []);
   const handleActive = (index) => {
     accordionItemRef.current.at(index).active();
     accordionItemRef.current.filter((item, idx) => idx !== index).forEach((item) => item.deactive());
