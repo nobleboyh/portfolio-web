@@ -10,7 +10,9 @@
 .item {
   position: relative;
 }
-
+.item + .item {
+  margin-top: 1rem;
+}
 .title,
 .detail {
   position: relative;
@@ -24,30 +26,41 @@
   border-radius: 0.3rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  border-bottom: 1px solid var(--primary-background-color);
+  border: 1px solid var(--primary-background-color);
+  transition: 0.5s;
   * {
     font-weight: 500;
   }
-  &:hover {
-    * {
-      font-weight: 600;
-    }
-    cursor: pointer;
-    background-color: lightsalmon;
-    .icon {
-      svg path {
-        color: var(--primary-background-color);
-      }
-      transform: rotate(180deg);
-      transition: 500ms;
-    }
-  }
 
-  &:hover + .detail {
+  &:hover {
+    background-color: lightsalmon;
+    cursor: pointer;
+  }
+}
+
+.active {
+  * {
+    font-weight: 600;
+  }
+  cursor: pointer;
+  .title {
+    background-color: lightsalmon;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  .icon {
+    svg path {
+      color: var(--primary-background-color);
+    }
+    transform: rotate(180deg);
+    transition: 500ms;
+  }
+  .detail {
     display: block;
     animation: fadeIn 500ms;
   }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

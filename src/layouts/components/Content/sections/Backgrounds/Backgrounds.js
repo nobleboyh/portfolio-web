@@ -5,9 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
+import { useRef } from 'react';
 const Backgrounds = () => {
+  const accordionItemRef = useRef([]);
+
+  const handleActive = (index) => {
+    accordionItemRef.current.at(index).active();
+    accordionItemRef.current.filter((item, idx) => idx !== index).forEach((item) => item.deactive());
+  };
   return (
-    <section className={styles.backgrounds}>
+    <section className={styles.backgrounds} id="backgrounds">
       <div className={styles.educationWrapper}>
         <h1>Education</h1>
         <img src={images.hust} alt="HUST logo" />
@@ -40,16 +47,25 @@ const Backgrounds = () => {
       <h1>Achievements</h1>
       <Accordion className={styles.achievements}>
         <AccordionItem
+          index={0}
+          handleActive={handleActive}
+          ref={(el) => (accordionItemRef.current[0] = el)}
           title="Awarded Toyota Scholarship"
           detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
           met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
         />
         <AccordionItem
+          index={1}
+          handleActive={handleActive}
+          ref={(el) => (accordionItemRef.current[1] = el)}
           title='Awarded "NITORI Scholarship" (NITORI Company)'
           detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
           met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
         />
         <AccordionItem
+          index={2}
+          handleActive={handleActive}
+          ref={(el) => (accordionItemRef.current[2] = el)}
           title="Awarded 9/10 HUST semester scholarships"
           detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
           met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
