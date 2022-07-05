@@ -27,7 +27,10 @@
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border: 1px solid var(--primary-background-color);
-  transition: 0.5s;
+  .icon {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
   * {
     font-weight: 500;
   }
@@ -87,6 +90,12 @@
   padding-top: 0;
 }
 
+.icon {
+  margin-left: 4rem;
+  svg path {
+    color: var(--primary-color);
+  }
+}
 // .title::after {
 //   position: absolute;
 //   content: '';
@@ -108,10 +117,3 @@
 //     }
 //   }
 // }
-
-.icon {
-  margin-left: 4rem;
-  svg path {
-    color: var(--primary-color);
-  }
-}
