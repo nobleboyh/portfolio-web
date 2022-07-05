@@ -7,7 +7,7 @@ import TechStack from '~/layouts/components/TechStack';
 const Experiences = () => {
   return (
     <section className={styles.experiences}>
-      <h1>My Experiences</h1>
+      <h1>Experiences</h1>
       <div className={styles.cards}>
         <Card image={images.pana} title={'Washing Machine R&D Engineer'}>
           <ul>
@@ -24,7 +24,7 @@ const Experiences = () => {
         <Card image={images.code} title={'and maybe more'} mainColor={'lightgray'}></Card>
       </div>
       <div className={styles.techStackWrapper}>
-        <h2>My Tech Stack</h2>
+        <h2>Tech Stack</h2>
         <div className={styles.techStack}>
           <TechStack title="Web">
             <img src={images.html} alt="html"></img>
@@ -57,9 +57,31 @@ const Experiences = () => {
         </div>
       </div>
       <Slider>
-        <SliderItem />
-        <SliderItem />
-        <SliderItem />
+        <SliderItem>
+          <div style={{ display: 'flex', justifyContent: 'space-between', height: '100%' }}>
+            <div>
+              <h1>Kawasaki</h1>
+              <h2>iOS App for maintenance center</h2>
+              <p>Design voice control module</p>
+            </div>
+
+            <div style={{ height: '100%', width: '30rem' }}>
+              <img src={images.swift} alt="" style={{ maxHeight: '100%' }}></img>
+            </div>
+          </div>
+        </SliderItem>
+        <SliderItem>
+          <h1>Slide 2</h1>
+        </SliderItem>
+        <SliderItem>
+          <h1>Slide 3</h1>
+        </SliderItem>
+        <SliderItem>
+          <h1>Slide 4</h1>
+        </SliderItem>
+        <SliderItem>
+          <h1>Slide 5</h1>
+        </SliderItem>
       </Slider>
     </section>
   );
