@@ -17,6 +17,7 @@ const images = {
   html: require('./tech/html.png'),
   java: require('./tech/java.png'),
   js: require('./tech/js.png'),
+  python: require('./tech/python.png'),
   react: require('./tech/react.png'),
   swift: require('./tech/swift.png'),
   vbscript: require('./tech/vbscript.png'),
@@ -24,6 +25,8 @@ const images = {
   wpf: require('./tech/wpf.png'),
   svn: require('./tech/svn.png'),
   git: require('./tech/git.png'),
+  mysql: require('./tech/mysql.png'),
+  iis: require('./tech/iis.png'),
 };
 
 export default images;

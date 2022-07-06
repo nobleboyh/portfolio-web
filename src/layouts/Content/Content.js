@@ -1,16 +1,23 @@
+import { createContext, useRef } from 'react';
 import styles from './Content.module.scss';
 import Aboutme from './sections/Aboutme';
 import Backgrounds from './sections/Backgrounds';
 import Experiences from './sections/Experiences';
+
+export const MainContext = createContext();
 const Content = () => {
+  const wrapperRef = useRef();
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <Aboutme />
-        <Backgrounds />
-        <Experiences />
+    <MainContext.Provider value={wrapperRef}>
+      <div className={styles.wrapper} ref={wrapperRef}>
+        <div className={styles.container}>
+          <Aboutme />
+          <Backgrounds />
+          <Experiences />
+        </div>
       </div>
-    </div>
+    </MainContext.Provider>
   );
 };
 

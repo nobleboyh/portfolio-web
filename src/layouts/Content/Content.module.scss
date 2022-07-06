@@ -95,12 +95,13 @@
   cursor: pointer;
 }
 .education {
+  position: relative;
   justify-self: center;
   padding: 2rem;
   border: 1px solid var(--primary-background-color);
   border-radius: 1rem;
-  box-shadow: 0rem 1rem 10px #cd1627;
   margin: 2rem auto 8rem auto;
+  animation: glow 500ms infinite linear alternate;
   h3 {
     font-size: 2.5rem;
     font-weight: 500;
@@ -114,6 +115,29 @@
   }
 }
 
+@keyframes glow {
+  0% {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px;
+  }
+
+  25% {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px;
+  }
+
+  50% {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px;
+  }
+
+  75% {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+      rgba(240, 46, 170, 0.1) -20px 20px;
+  }
+
+  100% {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+      rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  }
+}
 .achievements {
   margin-top: 2rem;
   display: flex;
@@ -125,25 +149,28 @@
 
 //Experiences
 .experiences {
-  padding: 4rem;
   background-color: lightcoral;
-
+  padding-bottom: 2rem;
   h1 {
     font-size: 3.5rem;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin: 1rem 4rem 1rem 4rem;
+    padding: 1rem 0;
   }
 }
 .cards {
-  margin: 2rem 0;
+  padding: 2rem;
+  margin: 0 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .techStackWrapper {
   display: flex;
   flex-direction: column;
   background-color: var(--main-container-color);
+  margin: 0 2rem;
   margin-top: 4rem;
   padding: 2rem 2rem 1rem 2rem;
   border-radius: 1rem;
@@ -156,4 +183,8 @@
   margin: 2rem 0;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.slider {
+  margin-top: 5rem;
 }

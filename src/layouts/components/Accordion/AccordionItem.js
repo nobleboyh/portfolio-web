@@ -5,7 +5,6 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useImperativeHandle, useRef, forwardRef } from 'react';
 const AccordionItem = forwardRef(({ title, detail, handleActive, index }, mainRef) => {
   const liRef = useRef();
-  console.log('re-render');
   useImperativeHandle(mainRef, () => ({
     active: () => {
       if (!liRef.current.classList.contains(styles.active)) {

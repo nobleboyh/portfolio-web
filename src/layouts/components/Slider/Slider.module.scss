@@ -1,12 +1,9 @@
-$len: 3;
 .wrapper {
   --number-of-items: 4;
-  margin-top: 3rem;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 1rem;
+  background-color: transparent;
+  // border-radius: 1rem;
   //Test
   height: 30rem;
 }
@@ -31,33 +28,39 @@ $len: 3;
   width: 4rem;
   height: 1rem;
   background-color: lightgray;
+  opacity: 0.5;
   border-radius: 999px;
   cursor: pointer;
   user-select: none;
   transition: 500ms;
-  &:hover {
-    width: 6rem;
-    filter: brightness(0.9);
-  }
 }
+
+.barActive {
+  width: 6rem;
+  filter: brightness(0.8);
+}
+
 .container {
   width: calc(100% * var(--number-of-items));
   height: 100%;
   display: flex;
-  @for $i from 0 through 10 {
-    .slide:nth-child(#{$i}) {
-      z-index: #{$i + 1};
-    }
-    #pagi#{$i}:checked + .slide#{$i} {
-      margin-left: calc(-#{$i} * calc(100% / var(--number-of-items)));
-    }
-  }
+  // @for $i from 0 through 10 {
+  //   .slide:nth-child(#{$i}) {
+  //     z-index: #{$i + 1};
+  //   }
+  //   #pagi#{$i}:checked ~ .slide0 {
+  //     margin-left: calc(-#{$i} * calc(100% / var(--number-of-items)));
+  //     transition: 0.5s;
+  //   }
+  // }
 }
 
 .slide {
-  background-color: #fff;
+  background-color: var(--primary-color);
   height: 100%;
   width: calc(100% / var(--number-of-items));
+  overflow: hidden;
+  border-radius: 2rem;
 }
 // //test
 // #pagi0:checked + .slide0 {
@@ -71,5 +74,28 @@ $len: 3;
 // }
 
 .slideWrapper {
+  --background-color: #fff;
+  background-color: var(--background-color);
   height: 100%;
 }
+
+.slideContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.subtitle {
+  margin-left: 4rem;
+}
+.description {
+  padding: 1rem 0;
+  margin-left: 4rem;
+}
+.imageWrapper {
+  height: 100%;
+  width: 30%;
+  display: flex;
+}
+//style={{ height: '100%', width: '30rem' }}
+//style={{ display: 'flex', justifyContent: 'space-between', height: '100%' }

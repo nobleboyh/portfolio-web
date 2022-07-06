@@ -34,6 +34,11 @@
   }
 }
 
+.logoWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .logo {
   margin: 1rem 4rem;
   height: 5rem;
@@ -47,9 +52,24 @@
   margin: 1rem 25% 0 25%;
   font-size: 1.5rem;
   background-color: var(--main-card-color);
+  border: 1px solid var(--main-card-color);
+  box-shadow: 0 0 10px var(--main-card-color);
   border-radius: 999px;
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;
+  }
+}
+
+.slideIn {
+  animation: slide 800ms ease-in-out;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(30%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

@@ -2,13 +2,14 @@ import styles from '../../Content.module.scss';
 import Slider from '~/layouts/components/Slider/';
 import SliderItem from '~/layouts/components/Slider/SliderItem';
 import Card from '~/layouts/components/Card';
+import { Cards } from '~/layouts/components/Card';
 import images from '~/assets/images';
 import TechStack from '~/layouts/components/TechStack';
 const Experiences = () => {
   return (
     <section className={styles.experiences}>
       <h1>Experiences</h1>
-      <div className={styles.cards}>
+      <Cards className={styles.cards}>
         <Card image={images.pana} title={'Washing Machine R&D Engineer'}>
           <ul>
             <li>Embedded developer for Top load series</li>
@@ -22,7 +23,7 @@ const Experiences = () => {
           </ul>
         </Card>
         <Card image={images.code} title={'and maybe more'} mainColor={'lightgray'}></Card>
-      </div>
+      </Cards>
       <div className={styles.techStackWrapper}>
         <h2>Tech Stack</h2>
         <div className={styles.techStack}>
@@ -32,6 +33,8 @@ const Experiences = () => {
             <img src={images.js} alt="js"></img>
             <img src={images.react} alt="react"></img>
             <img src={images.asp} alt="asp"></img>
+            <img src={images.mysql} alt="mysql"></img>
+            <img src={images.iis} alt="iis"></img>
           </TechStack>
           <TechStack title="Mobile">
             <img src={images.swift} alt="swift"></img>
@@ -56,32 +59,55 @@ const Experiences = () => {
           </TechStack>
         </div>
       </div>
-      <Slider>
-        <SliderItem>
-          <div style={{ display: 'flex', justifyContent: 'space-between', height: '100%' }}>
-            <div>
-              <h1>Kawasaki</h1>
-              <h2>iOS App for maintenance center</h2>
-              <p>Design voice control module</p>
-            </div>
-
-            <div style={{ height: '100%', width: '30rem' }}>
-              <img src={images.swift} alt="" style={{ maxHeight: '100%' }}></img>
-            </div>
-          </div>
-        </SliderItem>
-        <SliderItem>
-          <h1>Slide 2</h1>
-        </SliderItem>
-        <SliderItem>
-          <h1>Slide 3</h1>
-        </SliderItem>
-        <SliderItem>
-          <h1>Slide 4</h1>
-        </SliderItem>
-        <SliderItem>
-          <h1>Slide 5</h1>
-        </SliderItem>
+      <Slider className={styles.slider}>
+        <SliderItem
+          title="Kawasaki"
+          subtitle="iOS App for maintenance center"
+          description="Design voice control module"
+          image={images.swift}
+        ></SliderItem>
+        <SliderItem
+          title="OSCO"
+          subtitle="Production Management Web"
+          description={
+            <p>
+              In charge of FE: HTML, CSS, JS <br />
+              Check and modify BE: ASP.Net <br />
+              Database: MySQL
+              <br />
+              In charge of installation: IIS"
+            </p>
+          }
+          image={images.asp}
+        ></SliderItem>
+        <SliderItem
+          title="Denso"
+          subtitle="Map Reforming Tool"
+          description={<p>Modify algorithms for auto-driven car map</p>}
+          image={images.java}
+        ></SliderItem>
+        <SliderItem
+          title="Panasonic"
+          subtitle="Embedded Software For Top-load Washing Machine"
+          description={
+            <p>
+              Develope software for Middle East machine series <br /> Get IEC certificate for software{' '}
+            </p>
+          }
+          image={images.cpp}
+        ></SliderItem>
+        <SliderItem
+          title="Graduation Project"
+          subtitle="Intergrated System For Screw Nut Defection Detecting"
+          description={
+            <p>
+              Embedded system: STM32F4 (C++ and HAL library) <br />
+              Detection system: Python (Yolo and OpenCV) <br />
+              Communication by UART
+            </p>
+          }
+          image={images.python}
+        ></SliderItem>
       </Slider>
     </section>
   );
