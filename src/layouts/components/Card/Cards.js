@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { MainContext } from '~/layouts/Content/';
 let cx = classNames.bind(styles);
-const visibleDistance = 600;
+const visibleDistance = 800;
 const Cards = ({ children, className, slideIn = true }) => {
   const cardRefs = useRef([]);
   const cardContainer = useRef();
@@ -16,15 +16,14 @@ const Cards = ({ children, className, slideIn = true }) => {
     }
     reveal();
     parent.current.addEventListener('scroll', reveal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function reveal() {
     let windowHeight = parent.current.scrollTop;
     let elementTop = cardContainer.current.offsetTop - parent.current.offsetTop;
-    console.log(windowHeight + visibleDistance);
-    console.log(elementTop);
+
     if (elementTop < windowHeight + visibleDistance) {
-      console.log('Add');
       addAnimation();
     } else {
       removeAnimation();
@@ -33,9 +32,10 @@ const Cards = ({ children, className, slideIn = true }) => {
 
   function addAnimation() {
     cardRefs.current.forEach((card) => {
-      console.log(card);
       if (slideIn) {
-        card.classList.add(styles.slideIn);
+        if (!card.classList.contains(styles.slideIn)) {
+          card.classList.add(styles.slideIn);
+        }
       }
     });
   }
@@ -43,7 +43,9 @@ const Cards = ({ children, className, slideIn = true }) => {
   function removeAnimation() {
     cardRefs.current.forEach((card) => {
       if (slideIn) {
-        card.classList.remove(styles.slideIn);
+        if (card.classList.contains(styles.slideIn)) {
+          card.classList.remove(styles.slideIn);
+        }
       }
     });
   }

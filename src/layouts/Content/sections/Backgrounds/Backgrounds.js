@@ -8,19 +8,72 @@ import 'tippy.js/dist/tippy.css'; // optional
 import { useEffect, useRef } from 'react';
 const Backgrounds = () => {
   const accordionItemRef = useRef([]);
+  const educationRef = useRef();
+
   useEffect(() => {
     accordionItemRef.current.at(0).active();
+    console.log('Angle Cal', educationRef.current.getBoundingClientRect());
   }, []);
+  document.onmousemove = handleMouseMove;
+  function handleMouseMove(event) {
+    var eventDoc, doc, body;
+
+    event = event || window.event; // IE-ism
+
+    // If pageX/Y aren't available and clientX/Y are,
+    // calculate pageX/Y - logic taken from jQuery.
+    // (This is to support old IE)
+    if (event.pageX == null && event.clientX != null) {
+      eventDoc = (event.target && event.target.ownerDocument) || document;
+      doc = eventDoc.documentElement;
+      body = eventDoc.body;
+
+      event.pageX =
+        event.clientX +
+        ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
+        ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
+      event.pageY =
+        event.clientY +
+        ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
+        ((doc && doc.clientTop) || (body && body.clientTop) || 0);
+    }
+
+    // Use event.pageX / event.pageY here
+
+    let boundingRect = educationRef.current.getBoundingClientRect();
+    let limitX = boundingRect.width / 2;
+    let limitY = boundingRect.height / 2;
+    let centerY = (boundingRect.left + boundingRect.right) / 2;
+    let centerX = (boundingRect.top + boundingRect.bottom) / 2;
+    let diffX =
+      (event.pageX - centerY) / limitX > 1
+        ? 1
+        : (event.pageX - centerY) / limitX < -1
+        ? -1
+        : (event.pageX - centerY) / limitX;
+
+    let diffY =
+      (event.pageY - centerX) / limitY > 1
+        ? 1
+        : (event.pageY - centerX) / limitY < -1
+        ? -1
+        : (event.pageY - centerX) / limitY;
+
+    let boxShadow = `${-diffX}rem ${-diffY}rem 50px var(--primary-background-color) inset, 0 0 20px 2px var(--primary-background-color)`;
+    console.log(boxShadow);
+    educationRef.current.style.boxShadow = boxShadow;
+  }
   const handleActive = (index) => {
     accordionItemRef.current.at(index).active();
     accordionItemRef.current.filter((item, idx) => idx !== index).forEach((item) => item.deactive());
   };
+
   return (
     <section className={styles.backgrounds} id="backgrounds">
       <div className={styles.educationWrapper}>
         <h1>Education</h1>
         <img src={images.hust} alt="HUST logo" />
-        <div className={styles.education}>
+        <div className={styles.education} ref={educationRef}>
           <h3>
             Hanoi University of Science and Technology <br></br>
             Major: Mechatronics <br />

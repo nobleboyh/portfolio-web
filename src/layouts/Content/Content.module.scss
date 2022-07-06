@@ -101,7 +101,10 @@
   border: 1px solid var(--primary-background-color);
   border-radius: 1rem;
   margin: 2rem auto 8rem auto;
-  animation: glow 500ms infinite linear alternate;
+
+  background-color: #fff;
+  box-shadow: -1rem 0 20px var(--primary-background-color);
+  // animation: rotate 5s infinite alternate;
   h3 {
     font-size: 2.5rem;
     font-weight: 500;
@@ -112,6 +115,17 @@
   p {
     font-size: 2rem;
     line-height: 3.5rem;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: skewY(-10deg);
+    box-shadow: -1rem 1rem 20px var(--primary-background-color);
+  }
+  to {
+    transform: skewY(10deg);
+    box-shadow: -1rem -1rem 20px var(--primary-background-color);
   }
 }
 
@@ -169,7 +183,7 @@
 .techStackWrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--main-container-color);
+  background-color: #fff;
   margin: 0 2rem;
   margin-top: 4rem;
   padding: 2rem 2rem 1rem 2rem;
