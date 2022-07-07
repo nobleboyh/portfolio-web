@@ -5,24 +5,33 @@ import Card from '~/layouts/components/Card';
 import { Cards } from '~/layouts/components/Card';
 import images from '~/assets/images';
 import TechStack from '~/layouts/components/TechStack';
+import { useState } from 'react';
+import UnderConstruction from '~/shared-components/UnderConstruction';
 const Experiences = () => {
+  const [openModal, setOpenModal] = useState(false);
+  function handleModal(e) {
+    e.preventDefault();
+    setOpenModal((prev) => !prev);
+    console.log(e);
+  }
   return (
-    <section className={styles.experiences}>
+    <section className={styles.experiences} id="experiences">
+      {openModal && <UnderConstruction onExit={handleModal} />}
       <h1>Experiences</h1>
       <Cards className={styles.cards}>
-        <Card image={images.pana} title={'Washing Machine R&D Engineer'}>
+        <Card image={images.pana} title={'Washing Machine R&D Engineer'} onDetail={handleModal}>
           <ul>
             <li>Embedded developer for Top load series</li>
             <li>Lower parts designer and leader for NA-FD10X1 Series</li>
           </ul>
         </Card>
-        <Card image={images.trans} title={'Software Developer'} mainColor={'#FFD2D8'}>
+        <Card image={images.trans} title={'Software Developer'} mainColor={'#FFD2D8'} onDetail={handleModal}>
           <ul>
             <li>Incharge of Outsourcing projects</li>
             <li>Contact and discuss with customers</li>
           </ul>
         </Card>
-        <Card image={images.code} title={'and maybe more'} mainColor={'lightgray'}></Card>
+        <Card image={images.code} title={'and maybe more'} mainColor={'lightgray'} onDetail={handleModal}></Card>
       </Cards>
       <div className={styles.techStackWrapper}>
         <h2>Tech Stack</h2>

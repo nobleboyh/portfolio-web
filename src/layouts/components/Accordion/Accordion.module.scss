@@ -28,6 +28,8 @@
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border: 1px solid var(--primary-background-color);
+  box-shadow: 0 0 10px var(--primary-background-color) inset;
+
   .icon {
     transform: rotate(0deg);
     transition: 0.5s;
@@ -37,8 +39,12 @@
   }
 
   &:hover {
-    background-color: lightsalmon;
+    background-color: var(--secondary-color);
     cursor: pointer;
+
+    .icon svg path {
+      color: var(--fourth-color);
+    }
   }
 }
 
@@ -48,9 +54,9 @@
   }
   cursor: pointer;
   .title {
-    background-color: lightsalmon;
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-background-color);
+    box-shadow: 0 0 10px 1px var(--primary-background-color);
   }
   .icon {
     svg path {
@@ -94,7 +100,7 @@
 .icon {
   margin-left: 4rem;
   svg path {
-    color: var(--primary-color);
+    color: var(--third-color);
   }
 }
 // .title::after {

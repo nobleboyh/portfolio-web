@@ -1,0 +1,56 @@
+.wrapper {
+  background-color: var(--primary-background-color);
+}
+
+.container {
+  padding: 2rem;
+  background-color: var(--main-container-color);
+  border-radius: 2rem;
+  h1 {
+    margin-left: 2rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  line-height: 3rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  * {
+    font-size: 1.8rem;
+  }
+
+  input,
+  textarea {
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-background-color);
+  }
+  textarea {
+    height: 10rem;
+  }
+
+  p {
+    text-align: center;
+  }
+  button {
+    margin: 1rem auto;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 999px;
+    padding: 0.5rem 2rem;
+    border: 1px solid #000;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.8);
+    }
+  }
+}
+
+#download {
+  background-color: var(--secondary-color);
+}

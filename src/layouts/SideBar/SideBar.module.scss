@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: lightsalmon;
+  background-color: var(--fourth-color);
   display: block;
   height: 100vh;
   position: fixed;
@@ -62,38 +62,24 @@
     transform: skewX(45deg);
   }
 
-  &:hover {
+  &:not(.active):hover {
     cursor: pointer;
     background-color: var(--primary-color);
     transform: translateX(30px) translateY(30px);
-    transition: 0.5s;
+    transition: 0.2s;
 
     &::after {
-      transition: 0.5s;
-
+      transition: 0.2s;
       background-color: var(--primary-color);
     }
 
     &::before {
-      transition: 0.5s;
-
+      transition: 0.2s;
       background-color: var(--primary-color);
     }
   }
 
   //Active link
-
-  & .active {
-    background-color: var(--primary-color);
-    transform: translateX(30px) translateY(30px);
-    &::after {
-      background-color: var(--primary-color);
-    }
-
-    &::before {
-      background-color: var(--primary-color);
-    }
-  }
 }
 .wrapper .menu {
   @for $i from 1 through 8 {
@@ -150,4 +136,35 @@
 
 .itemTitle {
   user-select: none;
+}
+
+.active {
+  background-color: var(--secondary-color);
+  transform: translateX(15px) translateY(15px);
+  &::after {
+    background-color: var(--secondary-color);
+  }
+
+  &::before {
+    background-color: var(--secondary-color);
+  }
+
+  &:hover {
+    pointer-events: none;
+  }
+}
+
+.deactive {
+  background-color: var(--primary-background-color);
+  transform: translateX(0) translateY(0);
+  transition: 0.2s;
+  &::after {
+    background-color: var(--primary-background-color);
+    transition: 0.2s;
+  }
+
+  &::before {
+    background-color: var(--primary-background-color);
+    transition: 0.2s;
+  }
 }

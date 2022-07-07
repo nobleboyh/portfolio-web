@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './Card.module.scss';
 import PropTypes from 'prop-types';
-const Card = ({ image, title, children, mainColor, className }) => {
+const Card = ({ image, title, children, mainColor, className, onDetail }) => {
   useEffect(() => {
     if (mainColor === undefined || mainColor === null) {
       return;
@@ -16,7 +16,9 @@ const Card = ({ image, title, children, mainColor, className }) => {
       </div>
       <h2>{title}</h2>
       <div className={styles.childrenWrapper}>{children}</div>
-      <button className={styles.detailBtn}>Detail</button>
+      <button className={styles.detailBtn} onClick={(e) => onDetail(e)}>
+        Detail
+      </button>
     </div>
   );
 };

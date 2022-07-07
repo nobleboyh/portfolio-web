@@ -39,7 +39,6 @@ const Backgrounds = () => {
     }
 
     // Use event.pageX / event.pageY here
-
     let boundingRect = educationRef.current.getBoundingClientRect();
     let limitX = boundingRect.width / 2;
     let limitY = boundingRect.height / 2;
@@ -59,10 +58,10 @@ const Backgrounds = () => {
         ? -1
         : (event.pageY - centerX) / limitY;
 
-    let boxShadow = `${-diffX}rem ${-diffY}rem 50px var(--primary-background-color) inset, 0 0 20px 2px var(--primary-background-color)`;
-    console.log(boxShadow);
+    let boxShadow = `${-diffX}rem ${-diffY}rem 50px 0.5rem var(--primary-background-color) inset, 0 0 20px 2px var(--primary-background-color)`;
     educationRef.current.style.boxShadow = boxShadow;
   }
+
   const handleActive = (index) => {
     accordionItemRef.current.at(index).active();
     accordionItemRef.current.filter((item, idx) => idx !== index).forEach((item) => item.deactive());
@@ -106,24 +105,22 @@ const Backgrounds = () => {
           handleActive={handleActive}
           ref={(el) => (accordionItemRef.current[0] = el)}
           title="Awarded Toyota Scholarship"
-          detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
-          met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+          detail="First held in 1997 and maintained annually,
+           Toyota Technical Scholarship is one of the four main activities of Toyota Vietnam in the fields of education, training and human resource development."
         />
         <AccordionItem
           index={1}
           handleActive={handleActive}
           ref={(el) => (accordionItemRef.current[1] = el)}
           title='Awarded "NITORI Scholarship" (NITORI Company)'
-          detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
-          met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+          detail="NITORI Scholarship held by International Nitori Scholarship Fund, used for Technical students with impressive education achiements in year."
         />
         <AccordionItem
           index={2}
           handleActive={handleActive}
           ref={(el) => (accordionItemRef.current[2] = el)}
           title="Awarded 9/10 HUST semester scholarships"
-          detail="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio a
-          met ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+          detail="HUST scholarships founded by HUST, with the purpose is to encourage and recognize the academic and research achievements of students each term."
         />
       </Accordion>
     </section>

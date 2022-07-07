@@ -29,4 +29,18 @@ const images = {
   iis: require('./tech/iis.png'),
 };
 
+const hobbies = [
+  require('./hobbies/1.jpg'),
+  require('./hobbies/2.PNG'),
+  require('./hobbies/3.PNG'),
+  require('./hobbies/4.JPG'),
+  require('./hobbies/5.jpg'),
+  require('./hobbies/6.PNG'),
+  require('./hobbies/7.jpg'),
+  require('./hobbies/8.PNG'),
+  require('./hobbies/9.jpg'),
+  require('./hobbies/10.jpg'),
+];
+
+export { hobbies };
 export default images;

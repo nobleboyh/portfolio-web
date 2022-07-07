@@ -3,7 +3,11 @@
 :root {
   --primary-background-color: #1e1e1e;
   --secondary-background-color: #252526;
-  --primary-color: #f75c1e;
+  --primary-color: #e27d60;
+  --secondary-color: #c38d9e;
+  --third-color: #41b3a3;
+  --fourth-color: #85cdca;
+  --fifth-color: #e8a87c;
   --text-color: #eee;
   --main-container-color: #f6f6f2;
   --sidebar-width: 42rem;
@@ -19,6 +23,7 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
