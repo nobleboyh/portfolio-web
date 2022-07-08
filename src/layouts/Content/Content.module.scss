@@ -1,3 +1,4 @@
+@import '../../styles/utils.scss';
 .wrapper {
   background-color: var(--primary-background-color);
   margin-right: var(--sidebar-width);
@@ -7,6 +8,38 @@
   // line-height: 100rem; //Test
 }
 
+#toTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1rem;
+  right: calc(var(--sidebar-width) + 2rem);
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 999px;
+  background-color: var(--main-container-color);
+  opacity: 0.9;
+  box-shadow: 0 0 1rem var(--primary-background-color) inset;
+  z-index: 10000;
+  svg path {
+    color: var(--primary-background-color);
+  }
+  &:hover {
+    filter: brightness(0.9);
+  }
+  animation: fadeIn 200ms linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .container {
   width: 1000px;
   max-width: 90%;
@@ -61,6 +94,18 @@
   top: -20rem;
   border-radius: 999px;
   border: 0.8rem solid var(--main-container-color);
+}
+
+@media only screen and (max-width: $md-size) {
+  .aboutme {
+    padding-top: 5rem;
+  }
+  .avatar {
+    top: -20rem;
+    width: 25rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
 
 //backgrounds
@@ -129,29 +174,6 @@
   }
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px;
-  }
-
-  25% {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px;
-  }
-
-  50% {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px;
-  }
-
-  75% {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-      rgba(240, 46, 170, 0.1) -20px 20px;
-  }
-
-  100% {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-      rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-  }
-}
 .achievements {
   margin-top: 2rem;
   display: flex;
@@ -159,6 +181,26 @@
   margin: 2rem auto;
   font-size: 2rem;
   height: 40rem;
+}
+
+@media only screen and (max-width: ($md-size + 300px)) {
+  .backgrounds {
+    margin-left: 0;
+  }
+  .education {
+    padding-bottom: 0.5rem;
+  }
+  .achievements {
+    font-size: 1.6rem;
+    height: 40rem;
+  }
+}
+@media only screen and (max-width: $sm-size) {
+  .backgrounds {
+    h1 {
+      text-align: center;
+    }
+  }
 }
 
 //Experiences
@@ -178,6 +220,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
 }
 
 .techStackWrapper {
@@ -201,4 +245,19 @@
 
 .slider {
   margin-top: 5rem;
+}
+
+@media only screen and (max-width: $sm-size) {
+  .experiences {
+    h1 {
+      text-align: center;
+    }
+  }
+  .cards {
+    display: block;
+  }
+
+  .techStack {
+    display: block;
+  }
 }

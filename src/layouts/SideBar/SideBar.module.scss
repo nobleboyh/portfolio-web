@@ -1,3 +1,5 @@
+@import '../../styles/utils.scss';
+
 .wrapper {
   background-color: var(--fourth-color);
   display: block;
@@ -166,5 +168,92 @@
   &::before {
     background-color: var(--primary-background-color);
     transition: 0.2s;
+  }
+}
+.mobileBtn {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  svg path {
+    color: darkgray;
+    opacity: 0.9;
+  }
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+@media only screen and (max-width: $md-size) {
+  .menuItem {
+    width: 4rem;
+    padding: 0.5rem;
+    &::before {
+      width: 3rem;
+      left: -3rem;
+    }
+    &::after {
+      width: 4rem;
+      height: 3rem;
+      top: -3rem;
+    }
+  }
+  .itemTitle {
+    display: none;
+  }
+
+  .itemIcon {
+    margin-left: unset;
+  }
+  .menu::before {
+    left: -0.5rem;
+    animation: move 1s ease-in-out 1s infinite alternate, drop 1s ease-in 0s 1 forwards;
+  }
+
+  @keyframes move {
+    from {
+      left: -0.5rem;
+    }
+    to {
+      left: 2rem;
+    }
+  }
+}
+
+button.mobileBtnActive {
+  transform: rotate(180deg);
+  transition: 0.5s;
+  & + .wrapper {
+    animation: fadeIn 200ms linear;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: $sm-size) {
+  .mobileBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+}
+
+.visibleMenu {
+  .wrapper {
+    display: block;
+    position: fixed;
   }
 }

@@ -1,3 +1,4 @@
+@import '../../../../styles/utils.scss';
 .wrapper {
   background-color: var(--primary-background-color);
   * {
@@ -103,6 +104,25 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: ($md-size + 600)) {
+  .collection {
+    margin: 2rem -5rem;
+  }
+}
+
+@media only screen and (max-width: ($sm-size)) {
+  .collection {
+    margin: 2rem -1rem;
+  }
+  .wrapper {
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+    }
+  }
+}
+
 // &:hover {
 //   animation: visible-flow 300ms forwards ease-in-out;
 // }

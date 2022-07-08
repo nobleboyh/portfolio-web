@@ -1,3 +1,4 @@
+@import '../../../../styles/utils.scss';
 .wrapper {
   background-color: var(--primary-background-color);
 }
@@ -54,3 +55,10 @@
 #download {
   background-color: var(--secondary-color);
 }
+
+// @media only screen and (max-width: $sm-size) {
+//   .container h1 {
+//     margin: 0;
+//     text-align: center;
+//   }
+// }

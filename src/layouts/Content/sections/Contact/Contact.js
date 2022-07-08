@@ -48,7 +48,7 @@ const Contact = () => {
           ></input>
           <label htmlFor="email">Your message</label>
           <textarea
-            placeholder="I'd to work with you..."
+            placeholder="I'd like to work with you..."
             name="content"
             id={styles.content}
             value={content}

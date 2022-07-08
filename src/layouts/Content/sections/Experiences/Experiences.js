@@ -31,7 +31,7 @@ const Experiences = () => {
             <li>Contact and discuss with customers</li>
           </ul>
         </Card>
-        <Card image={images.code} title={'and maybe more'} mainColor={'lightgray'} onDetail={handleModal}></Card>
+        <Card image={images.code} title={'...'} mainColor={'lightgray'} onDetail={handleModal}></Card>
       </Cards>
       <div className={styles.techStackWrapper}>
         <h2>Tech Stack</h2>

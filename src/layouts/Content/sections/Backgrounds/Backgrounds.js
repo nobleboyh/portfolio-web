@@ -58,7 +58,7 @@ const Backgrounds = () => {
         ? -1
         : (event.pageY - centerX) / limitY;
 
-    let boxShadow = `${-diffX}rem ${-diffY}rem 50px 0.5rem var(--primary-background-color) inset, 0 0 20px 2px var(--primary-background-color)`;
+    let boxShadow = `${-diffX}rem ${-diffY}rem 50px var(--primary-background-color) inset, 0 0 20px 2px var(--primary-background-color)`;
     educationRef.current.style.boxShadow = boxShadow;
   }
 

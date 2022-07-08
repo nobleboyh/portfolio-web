@@ -1,3 +1,4 @@
+@import '../../../styles/utils.scss';
 .wrapper {
   --number-of-items: 4;
   position: relative;
@@ -99,3 +100,15 @@
 }
 //style={{ height: '100%', width: '30rem' }}
 //style={{ display: 'flex', justifyContent: 'space-between', height: '100%' }
+
+@media only screen and (max-width: $md-size) {
+  .imageWrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $sm-size) {
+  .wrapper {
+    height: 40rem;
+  }
+}
