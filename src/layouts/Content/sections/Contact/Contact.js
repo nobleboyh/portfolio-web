@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import ThankYouModal from '~/shared-components/ThankYouModal';
 import styles from './Contact.module.scss';
 
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [content, setContent] = useState('');
-
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const handleDownload = (e) => {
     e.preventDefault();
     window.location.replace('https://drive.google.com/file/d/1Zhs3cvFGa9D31vKr87nMJt8ZZHYB7nP9/view?usp=sharing');
@@ -31,9 +32,21 @@ const Contact = () => {
     //Reset
     setEmail('');
     setContent('');
+
+    //Open notification
+    setIsOpenModal(true);
+  };
+  const handleExitModal = (e) => {
+    e.preventDefault();
+    setIsOpenModal(false);
   };
   return (
     <section className={styles.wrapper} id="contact">
+      {isOpenModal && (
+        <ThankYouModal title="Message sent successfully" onExit={handleExitModal}>
+          I got you message. Thanks!
+        </ThankYouModal>
+      )}
       <div className={styles.container}>
         <h1>Contact me</h1>
         <form className={styles.form}>
